@@ -1,3 +1,4 @@
+//Global Variables
 const overlay = document.querySelector('#overlay');
 const h2 = document.querySelector('h2');
 const a = document.querySelector('a');
@@ -10,6 +11,7 @@ const letter = document.getElementsByClassName('letter');
 const show = document.getElementsByClassName('show');
 const img = document.querySelectorAll('img');
 
+//Hide overlay on start screen
 btnReset.addEventListener('click', () => {
     overlay.style.display = 'none';
 });
@@ -27,6 +29,7 @@ const phrases = [
     "Im king of the world"
 ];
 
+//create a getRandomPhrasesAsArray function
 function getRandomPhraseAsArray(arr) {
     let randomPhrase = arr[Math.floor(Math.random()*arr.length)];
     return randomPhrase.toString().split('');
@@ -34,6 +37,7 @@ function getRandomPhraseAsArray(arr) {
 
 const randomPhraseArr = getRandomPhraseAsArray(phrases).map(phrase => phrase.toLowerCase());
 
+//Set the game display
 function addPhraseToDisplay(arr) {
      for (let i = 0; i < arr.length; i++) {
          const li = document.createElement('li');
@@ -49,6 +53,7 @@ function addPhraseToDisplay(arr) {
 
 addPhraseToDisplay(randomPhraseArr);
 
+//Create a checkletter function
 function checkLetter(clickedBtn) {
     let result = null;
     for (let i = 0; i < letter.length; i++) {
@@ -60,6 +65,7 @@ function checkLetter(clickedBtn) {
     return result;
 }
 
+//add an addEventListener to the keyboard
 qwerty.addEventListener('click', (e) => {
     if (e.target.tagName == 'BUTTON') {
         e.target.className = 'chosen';
@@ -73,6 +79,7 @@ qwerty.addEventListener('click', (e) => {
     checkWin();
 });
 
+// add checkWin function
 function checkWin() {
     if (letter.length === show.length) {
         overlay.classList.add('win');
