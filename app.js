@@ -19,9 +19,9 @@ btnReset.addEventListener('click', () => {
 
 let missed = 0;
 const phrases = [
-    "Frankly my dear I don't give a Damn",
-    "Im gonna make him an offer he can't refuse", 
-    "Toto I've a feeling we're not in Kansas anymore",
+    "Frankly my dear I dont give a Damn",
+    "Im gonna make him an offer he cant refuse", 
+    "Toto I have a feeling we are not in Kansas anymore",
     "May the Force be with you",
     "What we got here is failure to communicate",
     "Your gonna need a bigger boat",
